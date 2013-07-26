@@ -34,6 +34,10 @@ Class Xlsx extends \BasicExcel\AbstractReader {
         $this->config = array_merge($this->config, $config);
     }
 
+    public function toArray($sheet = 1) {
+        return $this->getSheetData($sheet);
+    }
+
     protected function isValidFormat($filename) {
         $zip = new \ZipArchive();
         $status = $zip->open($file);

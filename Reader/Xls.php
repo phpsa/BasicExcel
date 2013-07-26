@@ -187,7 +187,7 @@ class Xls extends \BasicExcel\AbstractReader {
         return !!$this->rowInfo [$sheet] [$row] ['hidden'];
     }
 
-    function toarray($sheet = 0, $startRow = 1) {
+    function toArray($sheet = 0, $startRow = 1) {
         $arr = array();
 
         for ($row = $startRow; $row <= $this->rowcount($sheet); $row++) {
