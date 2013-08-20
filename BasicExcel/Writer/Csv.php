@@ -26,7 +26,7 @@ Class Csv extends \BasicExcel\AbstractWriter{
     public function fromArray($array) {
 
         $this->sheets = array(
-            $data
+            $array
         );
         return $this;
         //fputcsv ( resource $handle , array $fields [, string $delimiter = ',' [, string $enclosure = '"' ]] )
@@ -48,12 +48,15 @@ Class Csv extends \BasicExcel\AbstractWriter{
     }
 
     protected function write($filename) {
+        $rows = $this->sheets[0];
+     
         foreach ($rows as $row) {
-            fputcsv($this->handle, $row, $this->delimiter, $this->enclosure);
+            fputcsv($this->handle, $row, $this->delimter, $this->enclosure);
         }
         if (!fclose($this->handle)) {
             throw new \BasicExcel\Exception("Could not close handle");
         }
+        
     }
 
 }
