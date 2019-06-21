@@ -10,7 +10,7 @@ $data = array(
     array(2, 'John Smith', 'john.smith@fakemail.com'));
 
 try {
-    $csvwriter = new \BasicExcel\Writer\Csv(); //or \Xsl || \Xslx
+    $csvwriter = new \BasicExcel\Writer\Csv(); //or \Xls || \Xlsx
     $csvwriter->fromArray($data);
     //$csvwriter->writeFile('myfilename.csv');
     //OR
